@@ -6,8 +6,6 @@ namespace Cozastore.Models;
 [Table("Estoque")]
 public class Estoque
 {
-    private Produto produto;
-
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id  { get; set; }
