@@ -31,7 +31,7 @@ public class AppDbContext : IdentityDbContext
         builder.Entity<Estoque>()
             .HasOne(e => e.Tamanho)
             .WithMany(t => t.Estoque)
-            .HasForeignKey(e => e.Tamanho);
+            .HasForeignKey(e => e.TamanhoId);
 
         builder.Entity<Estoque>()
             .HasOne(e => e.Cor)
