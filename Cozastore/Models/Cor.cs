@@ -8,16 +8,17 @@ public class Cor
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id  { get; set; }
-    
+    public int Id { get; set; }
+
     [Required(ErrorMessage = "Por favor, informe o Nome")]
-    [StringLength(30, ErrorMessage = "O Nome deve possui no máximo 30 caracteres")]
+    [StringLength(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
     public string Nome { get; set; }
 
-    [Display(Name = "Código Hexa", Prompt = "Ex. #000000")]
+    [Display(Name = "Código Hexa", Prompt = "Ex. #FEFEFE")]
     [Required(ErrorMessage = "Por favor, informe o Código Hexa")]
-    [StringLength(30, ErrorMessage = "O Código Hexa deve possui no máximo 7 caracteres")]
+    [StringLength(7, ErrorMessage = "O Código Hexa deve possuir no máximo 7 caracteres")]
     public string CodigoHexa { get; set; }
 
-    public ICollection <Estoque> Estoque { get; set; }
+    public ICollection<Estoque> Estoque { get; set; }
+
 }
