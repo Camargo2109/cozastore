@@ -26,18 +26,17 @@
                 </label>
             </div>
             <div class="form-group mb-3">
-                <label asp-for="CategoriaMaeId" class="control-label"></label>
-                <select asp-for="CategoriaMaeId" class ="form-select" asp-items="ViewBag.CategoriaMaeId">
-                    <option value="">Selecione uma Categoria Mãe</option>
+                <label asp-for="CategoriaMaeId" class="form-label"></label>
+                <select asp-for="CategoriaMaeId" class="form-select" asp-items="ViewBag.CategoriaMaeId"></select>
+                <option value="">Selecione uma Categoria mãe</option>
                 </select>
             </div>
-                <div class="form-group mb-3">
+            <div class="form-group mb-3">
                 <label asp-for="Foto" class="control-label"></label>
-                <img id="Preview" class="img-fluid w-100"/>
-                <input type="file" asp-for="Foto" class="form-control" accept=".jpg,jpeg,png,.gif,.jfif"/>
-                <span asp-validation-for="Foto" class="text-danger"></span>
+                <img id="Preview" class="img-fluid w-100" />
+                <input type="file" asp-for="Foto" class="form-control" accept=".jpg,.jpeg,.png,.gif,.jfif" />
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
@@ -45,19 +44,19 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar a listagem</a>
 </div>
 
 @section Scripts {
-    ><script>
-    window.addEventListener('load', function()  {
-        document.querySelector('input[type=file]').addEventListener('change', function()  {
-            if(this.files && this.files[0]) {
-                var img = document.getElementById('Preview');
-                img.src = URL.createObjectURL(this.files[0])
-            }
-        })
-    }
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelector('input[type=file]').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var img = document.getElementById('Preview');
+                    img.src = URL.createObjectURL(this.files[0]);
+                }
+            });
+        });
+
     </script>
 }
-
