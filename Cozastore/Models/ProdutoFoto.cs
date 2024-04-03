@@ -5,20 +5,23 @@ namespace Cozastore.Models;
 
 [Table("ProdutoFoto")]
 public class ProdutoFoto
-{   [Key]
+{
+    [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id  { get; set; }
+    public int Id { get; set; }
 
-    [Display(Name ="Produto")]
-    [Required(ErrorMessage ="Por favor, informe o Produto")]
-    public int ProdutoId {get; set; }
+    [Display(Name = "Produto")]
+    [Required(ErrorMessage = "Por favor, informe o Produto")]
+    public int ProdutoId { get; set; }
+
     [ForeignKey("ProdutoId")]
-    public Produto Produto {get; set; }
+    public Produto Produto { get; set; }
 
     [Required(ErrorMessage = "Por favor, faça o upload da Foto")]
     [StringLength(300)]
-    public string Arquivo { get; set; }
+    public string ArquivoFoto { get; set; }
 
     [Display(Name = "Foto Destaque?")]
     public bool Destaque { get; set; } = false;
+    
 }

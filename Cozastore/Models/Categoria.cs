@@ -1,8 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Cozastore.Models;
-
 [Table("Categoria")]
 public class Categoria
 {
@@ -17,7 +15,7 @@ public class Categoria
     [StringLength(300)]
     public string Foto { get; set; }
 
-    [Display(Name = "Exibir como filtro?")]
+    [Display(Name = "Exibir como Filtro?")]
     public bool Filtrar { get; set; }
 
     [Display(Name = "Exibir como Banner?")]
@@ -25,9 +23,11 @@ public class Categoria
 
     [Display(Name = "Categoria Mãe")]
     public int? CategoriaMaeId { get; set; }
+
     [ForeignKey("CategoriaMaeId")]
     public Categoria CategoriaMae { get; set; }
 
     public ICollection<Produto> Produtos { get; set; }
+    // Categoria
 
 }

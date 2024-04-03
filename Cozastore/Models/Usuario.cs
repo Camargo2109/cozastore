@@ -12,10 +12,14 @@ public class Usuario
     [ForeignKey("UsuarioId")]
     public IdentityUser ContaUsuario { get; set; }
 
+    [Required(ErrorMessage = "Por favor, informe o Nome")]
+    [StringLength(60, ErrorMessage = "O Nome deve possuir 60 caracteres")]
+    public string Nome {get; set; }
+
     [DataType(DataType.Date)]
     [Display(Name = "Data de Nascimento")]
     [Required(ErrorMessage = "Por favor, informe a Data de Nascimento")]
-    public DateTime DataNascimento { get; set; } 
+    public DateTime DataNascimento {get; set; }
 
     [StringLength(300)]
     public string Foto { get; set; }

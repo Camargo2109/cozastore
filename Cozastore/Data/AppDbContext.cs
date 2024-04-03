@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Cozastore.Data;
 
 public class AppDbContext : IdentityDbContext
-{   
+{
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
@@ -14,7 +14,7 @@ public class AppDbContext : IdentityDbContext
     public DbSet<Cor> Cores { get; set; }
     public DbSet<Estoque> Estoques { get; set; }
     public DbSet<Produto> Produtos { get; set; }
-    public DbSet<ProdutoFoto> ProdutosFotos { get; set; }
+    public DbSet<ProdutoFoto> ProdutoFotos { get; set; }
     public DbSet<Tamanho> Tamanhos { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
 
@@ -23,6 +23,7 @@ public class AppDbContext : IdentityDbContext
         base.OnModelCreating(builder);
 
         #region Relacionamento de Muitos para Muitos - Estoque
+
         builder.Entity<Estoque>()
             .HasOne(e => e.Produto)
             .WithMany(p => p.Estoque)
@@ -37,8 +38,9 @@ public class AppDbContext : IdentityDbContext
             .HasOne(e => e.Cor)
             .WithMany(c => c.Estoque)
             .HasForeignKey(e => e.CorId);
-
         #endregion
+
+        
     }
 
 }
