@@ -13,7 +13,6 @@ public class ProdutoFoto
     [Display(Name = "Produto")]
     [Required(ErrorMessage = "Por favor, informe o Produto")]
     public int ProdutoId { get; set; }
-
     [ForeignKey("ProdutoId")]
     public Produto Produto { get; set; }
 
@@ -23,5 +22,5 @@ public class ProdutoFoto
 
     [Display(Name = "Foto Destaque?")]
     public bool Destaque { get; set; } = false;
-    
+
 }
