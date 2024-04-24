@@ -21,21 +21,21 @@ public class Estoque
     public int TamanhoId { get; set; }
     [ForeignKey("TamanhoId")]
     public Tamanho Tamanho { get; set; }
-    
+
     [Display(Name = "Cor")]
     [Required(ErrorMessage = "Por favor, informe a Cor")]
     public int CorId { get; set; }
     [ForeignKey("CorId")]
     public Cor Cor { get; set; }
-
-    [Display(Name = "Preço")]
-    [Column(TypeName = "decimal(10,2)")]  // 99.999.999,99
-    public decimal? Preco { get; set; }
     
-    [Display(Name = "Preço com Desconto")]
-    [Column(TypeName = "decimal(10,2)")]  // 99.999.999,99
-    public decimal? PrecoDesconto { get; set; }
+    [Display(Name = "Preço")]
+    [Column(TypeName = "decimal(10,2)")]
+    public decimal? Preco { get; set;}
 
+    [Display(Name = "Preço com Desconto")]
+    [Column(TypeName = "decimal(10,2)")]
+    public decimal PrecoDesconto { get; set;}
+    
     [Display(Name = "Qtde em Estoque")]
     [Required(ErrorMessage = "Por favor, informe a Qtde em Estoque")]
     public int QtdeEstoque { get; set; } = 0;
