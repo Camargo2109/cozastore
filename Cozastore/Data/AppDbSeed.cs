@@ -417,7 +417,7 @@ public class AppDbSeed
             }
         };
         builder.Entity<IdentityUserRole<string>>().HasData(userRoles);
-        #endregion   
-    
+        #endregion
+
     }
 }

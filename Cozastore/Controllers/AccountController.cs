@@ -77,10 +77,15 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-
-    public IActionResult AcccessDenied()
+    public IActionResult AccessDenied()
     {
-        return View("Error!");
+        return View();
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View();
     }
 
     private static bool IsValidEmail(string email)
